@@ -1,0 +1,50 @@
+{
+  "instructions": [
+    {"section":".text","address":"0xF800","machineCode":"0x0000","extraWords":[],"extraBytes":[],"rawLine":"START:"},
+    {"section":".text","address":"0xF800","machineCode":"0x4034","extraWords":["0x0010"],"extraBytes":[],"rawLine":"MOV #BUF_SIZE, R4"},
+    {"section":".text","address":"0xF804","machineCode":"0x4035","extraWords":["0x1A2B"],"extraBytes":[],"rawLine":"MOV #VAL, R5"},
+    {"section":".text","address":"0xF808","machineCode":"0x4036","extraWords":["0x0041"],"extraBytes":[],"rawLine":"MOV #'A', R6"},
+    {"section":".text","address":"0xF80C","machineCode":"0x4217","extraWords":["0x2000"],"extraBytes":[],"rawLine":"MOV &data_value, R7"},
+    {"section":".text","address":"0xF810","machineCode":"0x5415","extraWords":["0x0004"],"extraBytes":[],"rawLine":"ADD 4(R4), R5"},
+    {"section":".text","address":"0xF814","machineCode":"0x4627","extraWords":[],"extraBytes":[],"rawLine":"MOV @R6, R7"},
+    {"section":".text","address":"0xF816","machineCode":"0x4738","extraWords":[],"extraBytes":[],"rawLine":"MOV @R7+, R8"},
+    {"section":".text","address":"0xF818","machineCode":"0x403F","extraWords":["0x1388"],"extraBytes":[],"rawLine":"MOV     ##5000, R15"},
+    {"section":".text","address":"0xF81C","machineCode":"0x831F","extraWords":[],"extraBytes":[],"rawLine":"DEC     R15"},
+    {"section":".text","address":"0xF81E","machineCode":"0x23FE","extraWords":[],"extraBytes":[],"rawLine":"JNZ     dloop_1"},
+    {"section":".text","address":"0xF820","machineCode":"0x12B0","extraWords":["0x0000"],"extraBytes":[],"rawLine":"CALL #print_msg"},
+    {"section":".text","address":"0xF822","machineCode":"0x4030","extraWords":["0xF830"],"extraBytes":[],"rawLine":"JMP NEXT"},
+    {"section":".text","address":"0xF826","machineCode":"0x0000","extraWords":[],"extraBytes":["0xC3","0xF5","0x48","0x40"],"rawLine":".float 3.14"},
+    {"section":".text","address":"0xF82A","machineCode":"0x0000","extraWords":[],"extraBytes":["0x48","0x45","0x4C","0x4C","0x4F","0x00"],"rawLine":".string \"HELLO\""},
+    {"section":".text","address":"0xF830","machineCode":"0x0000","extraWords":[],"extraBytes":[],"rawLine":"NEXT:"},
+    {"section":".text","address":"0xF830","machineCode":"0x4303","extraWords":[],"extraBytes":[],"rawLine":"NOP"},
+    {"section":".text","address":"0xF832","machineCode":"0x1300","extraWords":[],"extraBytes":[],"rawLine":"RETI"},
+    {"section":".data","address":"0x2000","machineCode":"0x0000","extraWords":["0xABCD","0x1234"],"extraBytes":[],"rawLine":".word 0xABCD, 0x1234"},
+    {"section":".data","address":"0x2004","machineCode":"0x0000","extraWords":["0x00AA"],"extraBytes":[],"rawLine":".word 0b10101010"},
+    {"section":".data","address":"0x2006","machineCode":"0x0000","extraWords":["0x0053"],"extraBytes":[],"rawLine":".word 123Q"},
+    {"section":".data","address":"0x2008","machineCode":"0x0000","extraWords":[],"extraBytes":["0x5A"],"rawLine":".byte 'Z'"},
+    {"section":".data","address":"0x2009","machineCode":"0x0000","extraWords":[],"extraBytes":["0x5A"],"rawLine":".byte 5Ah"},
+    {"section":".data","address":"0x200A","machineCode":"0x0000","extraWords":[],"extraBytes":["0x00","0x00","0xC0","0xBF"],"rawLine":".float -1.5"}
+  ],
+  "symbols": [
+    {"name":"VAL","address":"0x1A2B","binding":"LOCAL","defined":true,"section":".text"},
+    {"name":"dloop_1","address":"0xF81C","binding":"LOCAL","defined":true,"section":".text"},
+    {"name":"float_data","address":"0x200A","binding":"LOCAL","defined":true,"section":".data"},
+    {"name":"hex_h_val","address":"0x2009","binding":"LOCAL","defined":true,"section":".data"},
+    {"name":"octal_val","address":"0x2006","binding":"LOCAL","defined":true,"section":".data"},
+    {"name":"print_msg","address":"0x0000","binding":"REF","defined":false,"section":"null"},
+    {"name":"NEXT","address":"0xF830","binding":"LOCAL","defined":true,"section":".text"},
+    {"name":"data_value","address":"0x2000","binding":"LOCAL","defined":true,"section":".data"},
+    {"name":"binary_val","address":"0x2004","binding":"LOCAL","defined":true,"section":".data"},
+    {"name":"BUF_SIZE","address":"0x0010","binding":"LOCAL","defined":true,"section":".text"},
+    {"name":"START","address":"0xF800","binding":"LOCAL","defined":true,"section":".text"},
+    {"name":"char_val","address":"0x2008","binding":"LOCAL","defined":true,"section":".data"}
+  ],
+  "relocations": [
+    {"symbol":"BUF_SIZE","address":"0xF802","type":"ABSOLUTE_16BIT"},
+    {"symbol":"VAL","address":"0xF806","type":"ABSOLUTE_16BIT"},
+    {"symbol":"data_value","address":"0xF80E","type":"ABSOLUTE_16BIT"},
+    {"symbol":"dloop_1","address":"0xF81E","type":"PC_RELATIVE_10BIT"},
+    {"symbol":"print_msg","address":"0xF822","type":"ABSOLUTE_16BIT"},
+    {"symbol":"NEXT","address":"0xF824","type":"ABSOLUTE_16BIT"}
+  ]
+}

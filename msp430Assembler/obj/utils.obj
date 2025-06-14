@@ -1,0 +1,12 @@
+{
+  "instructions": [
+    {"section":".text","address":"0x0000","machineCode":"0x0000","extraWords":[],"extraBytes":[],"rawLine":"print_msg:"},
+    {"section":".text","address":"0x0000","machineCode":"0x4C0B","extraWords":[],"extraBytes":[],"rawLine":"MOV  R12, R11"},
+    {"section":".text","address":"0x0002","machineCode":"0x1300","extraWords":[],"extraBytes":[],"rawLine":"RETI"}
+  ],
+  "symbols": [
+    {"name":"print_msg","address":"0x0000","binding":"DEF","defined":true,"section":".text"}
+  ],
+  "relocations": [
+  ]
+}

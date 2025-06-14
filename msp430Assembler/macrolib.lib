@@ -1,0 +1,19 @@
+; =============================================
+; macrolib.lib - Genel amacli macro kutuphanesi
+; =============================================
+
+; 'cycles' degeri kadar basit bir gecikme dongusu olusturur.
+; Her cagrimda benzersiz etiket olusturmak icin '?' kullanir.
+delay   .macro  cycles
+        MOV     #cycles, R15  ; Gecikme sayacini R15'e yukle
+dloop?: DEC     R15           ; Sayaci bir azalt
+        JNZ     dloop?        ; Sifir degilse donguye devam et
+        .endm
+
+; Verilen 3 degeri toplayip SUM'a yazar.
+add3    .macro P1,P2,P3,SUM
+        MOV     #0,SUM
+        ADD     P1,SUM
+        ADD     P2,SUM
+        ADD     P3,SUM
+        .endm 

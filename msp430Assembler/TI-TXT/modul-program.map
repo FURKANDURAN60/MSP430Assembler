@@ -1,0 +1,25 @@
+******************************************************************************
+*                             MSP430 LINKER MAP FILE                             *
+******************************************************************************
+
+OUTPUT FILE NAME: <modul-program.txt>
+
+SECTION ALLOCATION MAP
+
+output                                  attributes/
+section   page    origin      length      input sections
+--------  ----  ----------  ----------  --------------------
+.data        0  0x00002000  0x0000000E
+                0x00002000  0x0000000E  program.obj (.data)
+.text        0  0x0000F800  0x00000036
+                0x0000F82C  0x0000000A  modul.obj (.text)
+                0x0000F800  0x0000002C  program.obj (.text)
+
+
+GLOBAL SYMBOLS
+
+address     name
+----------  --------------------
+0x0000F82C  print_hello
+
+[1 symbols]

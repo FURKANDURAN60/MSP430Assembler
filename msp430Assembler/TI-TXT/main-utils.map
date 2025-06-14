@@ -1,0 +1,25 @@
+******************************************************************************
+*                             MSP430 LINKER MAP FILE                             *
+******************************************************************************
+
+OUTPUT FILE NAME: <main-utils.txt>
+
+SECTION ALLOCATION MAP
+
+output                                  attributes/
+section   page    origin      length      input sections
+--------  ----  ----------  ----------  --------------------
+.data        0  0x00002000  0x0000000E
+                0x00002000  0x0000000E  main.obj (.data)
+.text        0  0x0000F800  0x00000038
+                0x0000F800  0x00000034  main.obj (.text)
+                0x0000F834  0x00000004  utils.obj (.text)
+
+
+GLOBAL SYMBOLS
+
+address     name
+----------  --------------------
+0x0000F834  print_msg
+
+[1 symbols]
